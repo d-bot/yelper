@@ -1,5 +1,8 @@
-require "yelper/version"
+$: << File.dirname(__FILE__)
 
-module Yelper
-  # Your code goes here...
-end
+require "yelper/version"
+require "yelper/crawler"
+
+#module Yelper
+#  # Your code goes here...
+#end
