@@ -33,12 +33,13 @@ end.parse!
 keyword = ARGV[0].gsub(' ', '+')
 location = ARGV[1].gsub(' ', '+')
 
-machine = Yelper::Crawler.new(keyword, location)
-machine.start_crawl
+restaurants = Yelper::Crawler.new(keyword, location).start
 
-#Filter.new(yelp.ret).start
+p restaurants
 
+puts "completed crawling all restaurants"
 
+ret = Yelper::Pop.new(restaurants, 3, 1000).filter
 
-
-
+puts
+p ret
